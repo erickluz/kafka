@@ -16,8 +16,9 @@ public class StrConsumerListener {
 	}
 	
 	@StrConsumerCustomListener(groupId = "group-1")
-	public void listener2(String message) {
+	public void listener2(String message) throws IllegalAccessException {
 		log.info("1 Received message: {}", message);
+		throw new IllegalAccessException("error");
 	}
 	
 	@StrConsumerCustomListener(groupId = "group-2")
